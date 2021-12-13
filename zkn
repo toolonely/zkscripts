@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# create a new Zettelkasten note and open it in vim
+
+vim $(date +%Y%m%d%H%M%S).md
