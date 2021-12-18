@@ -6,4 +6,7 @@
 
 # usage: zks STRING
 
-vim $( rg -l "$1" | fzf --preview="cat {} | sed 's/$1/\\\\033[0\;31m$1\\\\033[0m/g' | xargs -0 printf " )
+selected=$( rg -l "$1" | fzf --preview="cat {} | sed 's/$1/\\\\033[0\;31m$1\\\\033[0m/g' | xargs -0 printf " )
+if [[ ! -z "$selected" ]]; then
+    vim "$selected"
+fi
