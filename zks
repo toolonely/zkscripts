@@ -6,6 +6,12 @@
 
 # usage: zks STRING
 
+
+if [ -z "$1" ]; then
+    echo "search string argument is mandatory"
+    exit -1
+fi
+
 cmd=vim
 
 if [[ $DISPLAY ]]; then
