@@ -6,7 +6,13 @@
 
 # usage: zks STRING
 
+cmd=vim
+
+if [[ $DISPLAY ]]; then
+    cmd=gvim
+fi
+
 selected=$( rg -l "$1" | fzf --preview="cat {} | sed 's/$1/\\\\033[0\;31m$1\\\\033[0m/g' | xargs -0 printf " )
 if [[ ! -z "$selected" ]]; then
-    vim "$selected"
+    "$cmd" "$selected"
 fi
