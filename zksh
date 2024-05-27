@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# search for a string in Zettelkasten notes, using ripgrep
+# show headlines (first line) of search results in fzf
+
+# usage: zksh STRING
+
+if [ -z "$1" ]; then
+    echo "search string argument is mandatory"
+    exit -1
+fi
+
+head -n 1 -q $(rg -l "$1") | fzf
+
