@@ -8,4 +8,12 @@ if [[ $DISPLAY ]]; then
     cmd=gvim
 fi
 
-"$cmd" $(date +%Y%m%d%H%M%S).md
+filename=$(date +%Y%m%d%H%M%S).md
+
+cat <<EOF >> $filename
+# $filename
+
+tags: ``
+EOF
+
+"$cmd" -c ":execute 'norm gg'" -c "startinsert!" $filename
