@@ -3,8 +3,10 @@
 # search for a string in Zettelkasten notes, using ripgrep
 # show search results in fzf with preview
 # open selected note in vim
+# Note: when searching for a hashtag, escape it properly for ripgrep
 
 # usage: zks STRING
+#        zks \#HASHTAG
 
 
 if [ -z "$1" ]; then
