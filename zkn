@@ -12,7 +12,7 @@ now=$(date +%Y%m%d%H%M%S)
 filename="$now.md"
 
 cat <<EOF >> $filename
-# $now
+# $now 
 
 tags: ``
 EOF
