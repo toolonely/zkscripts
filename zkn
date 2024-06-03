@@ -15,6 +15,12 @@ cat <<EOF >> $filename
 # $now 
 
 tags: \`\`
+
+---
+
+References:
+
+1.
 EOF
 
 "$cmd" -c ":execute 'norm gg'" -c "startinsert!" $filename
