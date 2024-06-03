@@ -8,10 +8,11 @@ if [[ $DISPLAY ]]; then
     cmd=gvim
 fi
 
-filename=$(date +%Y%m%d%H%M%S).md
+now=$(date +%Y%m%d%H%M%S)
+filename="$now.md"
 
 cat <<EOF >> $filename
-# $filename
+# $now
 
 tags: ``
 EOF
