@@ -14,7 +14,7 @@ filename="$now.md"
 cat <<EOF >> $filename
 # $now 
 
-tags: ``
+tags: \`\`
 EOF
 
 "$cmd" -c ":execute 'norm gg'" -c "startinsert!" $filename
